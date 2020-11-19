@@ -1,2 +1,5 @@
 import { combineReducers } from 'redux';
-export default combineReducers({fruit: () => 999});
+import postReducer from './postReducer';
+export default combineReducers({
+    post: postReducer
+});
