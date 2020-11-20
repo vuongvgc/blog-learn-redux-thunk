@@ -1,3 +1,19 @@
+# What I learn
+
+# Redux thunk
+Sử dụng applyMiddleware để quản lý API vào store
+Sử dụng redux khi action creator  trả về một action. thì action có thể là obj, function
+ + obj: have type và giá trị payload không phải là underfined
+ + function nó gọi dispatch
+Thì redux thunk sẽ sử async để sử dụng 1 func trả về 1 func
+để giải quyết trường hợp overfetchUser thì sử dụng action creator trả về 1 action creator
+Đầu tư ta sẽ lấy post về sau đó lọc ra các unique user Id sau đó mới gọi fetchUser
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

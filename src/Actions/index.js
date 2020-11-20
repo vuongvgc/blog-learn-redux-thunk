@@ -13,12 +13,17 @@ export const fetchUser = (id) => {
     }
 }
 export const fetchPostAndUser = () => async (dispatch, getState) => {
-    // console.log("About to fetch post");
+    console.log("About to fetch post");
     await dispatch(fetchPost());
     // console.log("fetch post");
     const userIds = _.uniq(_.map(getState().post, "userId"))
     // console.log(userIds);
     userIds.forEach(id => dispatch(fetchUser(id)));
+    // _.chain(getState().post)
+    //     .map("userId")
+    //     .uniq()
+    //     .forEach(id => dispatch(fetchUser(id)))
+    //     .value();
 }
 // eslint-disable-next-line no-undef
 // var _ = require('lodash')
