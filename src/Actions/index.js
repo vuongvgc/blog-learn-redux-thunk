@@ -12,10 +12,19 @@ export const fetchPost = () => {
 //     }
 // }
 // eslint-disable-next-line no-undef
+// var _ = require('lodash')
+// export const fetchUser = function(id){
+//     return  _.memoize(async function(dispatch){
+//         const response = await jsonPlaceholder.get(`/users/${id}`);
+//         dispatch({type: 'FETCH__USER', payload: response.data});
+//     });
+// };
+export const fetchUser = (id) => dispatch => {
+    _fetchUser(id, dispatch);
+}
+// memoize funtion 
 var _ = require('lodash')
-export const fetchUser = function(id){
-    return  _.memoize(async function(dispatch){
-        const response = await jsonPlaceholder.get(`/users/${id}`);
-        dispatch({type: 'FETCH__USER', payload: response.data});
-    });
-};
+const _fetchUser = _.memoize( async (id, dispatch) => {
+    const response = await jsonPlaceholder.get(`/users/${id}`);
+    dispatch({type: 'FETCH__USER', payload: response.data});
+})
